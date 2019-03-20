@@ -21,7 +21,7 @@ public class Leap_year
 			int year =Integer.parseInt(s1);//changing to integer type of value
 			if(s1.length()==4)
 			{
-				if(year%4==0 || year%100==0 && year%400==0 )
+				if(year%4==0 && year%400==0 )
 					
 				{
 					System.out.println(year+" is a leap year");
