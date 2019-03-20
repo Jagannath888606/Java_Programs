@@ -8,6 +8,9 @@
 
 package com.bridgeit.functional;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import com.bridgeit.utility.Utility;
 
 public class Coupon_Numbers 
@@ -16,9 +19,32 @@ public class Coupon_Numbers
 	{
 		try
 		{
-			System.out.println("Enter maximum length");
-			int length = Utility.inputInt();
-			System.out.println("Coupon number = "+Utility.getRandomInteger(length));
+			System.out.println("Enter distinct coupon number");    
+	        int coupon=Utility.inputInt();
+	        ArrayList<Integer> a1=new ArrayList<Integer>();//creating object for array class
+	        int count=0;
+	        for(int i=0;i<=coupon;i++)
+	        {
+	            Random random=new Random();// using random to create random values
+	            int coup=random.nextInt(coupon);
+	            System.out.println(coup);
+	            count++;
+	            if(!a1.contains(coup))//checking random values with array values
+	            {
+	                a1.add(coup);//adding coupon number
+	                break;
+	            }
+	            else
+	            {
+	                i--;
+	            }
+	            for(Integer k:a1)
+	            {
+
+		            System.out.println(k);
+		            System.out.println("total of all distinct numbers is "+ count);
+	            }
+	        }
 		}
 		catch (Exception e) 
 		{
