@@ -29,7 +29,7 @@ public class Distance_Program
 			}
 			else
 			{
-				System.out.println("enter valid data");
+				System.out.println("Enter valid data");
 			}
 			
 		} 

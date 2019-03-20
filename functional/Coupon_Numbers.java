@@ -40,9 +40,8 @@ public class Coupon_Numbers
 	            }
 	            for(Integer k:a1)
 	            {
-
 		            System.out.println(k);
-		            System.out.println("total of all distinct numbers is "+ count);
+		            System.out.println("Total of all distinct numbers is "+ count);
 	            }
 	        }
 		}

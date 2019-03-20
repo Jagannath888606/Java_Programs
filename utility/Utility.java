@@ -946,13 +946,15 @@ public class Utility
 	 * @purpose      : This method is used to read data from file store them in a string  array
 	 * @return       : string array
 	 **/
+		
 		public static String[] fileReadString(String path) throws Exception
 		{
 			String line;
 			FileReader file = new FileReader(path); // reading data from file
-			BufferedReader read = new BufferedReader(file); // reading data from fr object
+			@SuppressWarnings("resource")
+			BufferedReader read = new BufferedReader(file); 
 
-			/* reading data from br object and adding it to linkedlist */
+			/* reading data from read object and adding it to linkedlist */
 			while ((line = read.readLine())!= null) 
 			{
 				String word[] = line.split(" ");// adding word in file to word array
@@ -985,15 +987,28 @@ public class Utility
 			for (int i = 0; i < arr.length; i++)
 			{
 				arr[i] = Integer.parseInt(word[i]);
-
 			}
-
 			br.close();
 		}
 		return null;
 	}
 		
-		
+	//**************************************************************************************************************************************************************//
+	/**
+	 * @param int    : This method takes two integer as command line aruguments
+	 * @purpose      : This method is used to find day of week
+	 * @return       : integer
+	 **/	
+		public static int getDay(int month,int year)
+		{
+			final int day=1;
+			/*standard formulas to find the day falls on the date */
+			int y = year - (14 - month) / 12;
+			int x = y + y / 4 - y / 100 + y / 400;
+			int m = month + 12 * ((14 - month) / 12) - 2;
+			int d = (day + x + 31 * m / 12) % 7;
+			return d;// returning d value
+		}
 
 		 
 		 
@@ -1055,6 +1070,32 @@ public class Utility
 		
 		
 		
-		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 }
