@@ -9,6 +9,7 @@ package com.bridgeit.utility;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -131,6 +132,101 @@ public class Utility
 		boolean s = sc.nextBoolean();//calling next method to scan boolean value and store it in a variable
 		return s;
 	}
+	//***********************************************************2D_ARRAY******************************************************************//
+	/**
+	 * @purpose :To read integer and double and boolean type of input from user and returns
+	 *           integer as well as double and boolean values
+	 * @return :void
+	 **/
+	
+	
+	
+	public static void TwoDArray()
+	{
+		System.out.println("Enter 1 for integer array");
+		System.out.println("Enter 2 for double array");
+		System.out.println("Enter 3 for boolean array");
+		int choice = Utility.inputInt();
+		switch (choice)
+		{
+			case 1:
+					System.out.println("Enter rows of array");
+					int rows = Utility.inputInt();
+					System.out.println("Enter coloums of array");
+					int coloums = Utility.inputInt();
+					int arr[][] = new int[rows][coloums];
+					System.out.println("Enter your array");
+					for (int i=0;i<arr.length;i++)
+					{
+						for (int j=0;j<arr.length;j++)
+						{
+							arr[i][j] = Utility.inputInt();
+						}
+					}
+					for (int i=0;i<arr.length;i++)
+					{
+						for (int j=0;j<arr.length;j++)
+						{
+							System.out.print(arr[i][j]+" ");
+						}
+						System.out.println();
+					}
+					System.out.println();
+					break;
+			case 2:
+					System.out.println("Enter rows of array");
+					int rowd = Utility.inputInt();
+					System.out.println("Enter coloums of array");
+					int coloumd = Utility.inputInt();
+					
+					double arrd[][] = new double[rowd][coloumd];
+					System.out.println("Enter your array");
+					for (int i=0;i<arrd.length;i++)
+					{
+						for (int j=0;j<arrd.length;j++)
+						{
+							arrd[i][j] = Utility.getDouble();
+						}
+					}
+					for (int i=0;i<arrd.length;i++)
+					{
+						for (int j=0;j<arrd.length;j++)
+						{
+							System.out.print(arrd[i][j]+" ");
+						}
+						System.out.println();
+					}
+					System.out.println();
+					break;
+				
+			case 3:
+					System.out.println("Enter rows of array: ");
+					int rowb = Utility.inputInt();
+					System.out.println("Enter coloums of array: ");
+					int coloumb = Utility.inputInt();
+					
+					boolean arrb[][] = new boolean[rowb][coloumb];
+					System.out.println("Enter your array");
+					for (int i=0;i<arrb.length;i++)
+					{
+						for (int j=0;j<arrb.length;j++)
+						{
+							arrb[i][j] = Utility.getBoolean();
+						}
+					}
+					for (int i=0;i<arrb.length;i++)
+					{
+						for (int j=0;j<arrb.length;j++)
+						{
+							System.out.print(arrb[i][j]+" ");
+						}
+						System.out.println();
+					}
+					System.out.println();
+					break;
+		}
+	}
+	
 	//*****************************************************************************************************************************************************//
 	/**
 	 * @purpose :This method take a string as command line argument which is
@@ -309,7 +405,7 @@ public class Utility
 	 **/
 	public static void binarysearchofstring()
 	{
-		System.out.println("Enter string");
+		System.out.println("Enter string: ");
 		 String first  = Utility.getString();
 		 if(first.matches("[a-zA-Z]+"))
 		 {
@@ -317,8 +413,8 @@ public class Utility
 			 Arrays.sort(sort1);
 			 for(String k:sort1)
 			 System.out.println(k);
-			 System.out.println("Enter  string to sort");
-			 String search= Utility.getString();
+			 System.out.println("Enter  string to search");
+			 String search= Utility.getString(); 
 			 int firstindex=0;
 			 int lastindex=sort1.length-1;
 			 long startTime=System.nanoTime();
@@ -327,22 +423,26 @@ public class Utility
 			 {
 				 int mid=(firstindex+lastindex)/2;
 				 if(search.compareTo(sort1[mid])==0)
-						 {
-					       stopTime=System.nanoTime();
-					       System.out.println("Search element found at"+(mid+1));
-					       break;
-						 }
+				 {
+					 stopTime=System.nanoTime();
+					 System.out.println("Search element found at"+(mid+1));
+					 break;
+				 }
 				 if(search.compareTo(sort1[mid])>0)
-						 {
-					       firstindex=mid+1;
+				 {
+					 firstindex=mid+1;
 					       
-						 }
+				 }
 				 else
 				 {
 					 lastindex=mid-1;
 				 }
-			 }
-				 System.out.println("Time taken for searcing of string "+(stopTime-startTime));
+			 } 
+			if(firstindex>lastindex)
+			{
+				System.out.println("Element is not found");
+			}
+			 System.out.println("Time taken for searcing of string "+(stopTime-startTime));
 		 }
 		 else
 		 {
@@ -356,7 +456,7 @@ public class Utility
 	 *           array usinf binary search technique
 	 * @return :void
 	 **/
-	public static void binarySearch()
+	public static void binarySearchForInt()
 	{
 		System.out.println("Enter number of elements: ");
 		int n=Utility.inputInt();
@@ -378,7 +478,7 @@ public class Utility
 			if(array[mid]==searchElement)
 			{
 				stopTime=System.nanoTime();
-				System.out.println("search element is "+(mid+1)+" postion");
+				System.out.println("search element is "+mid+" postion");
 				break;
 			}
 			else if(searchElement>array[mid])
@@ -523,8 +623,8 @@ public class Utility
 	{
 		System.out.println("Enter string: ");
 		String str=Utility.getString();
-		 if(str.matches("[a-zA-Z]+"))
-		 {
+		if(str.matches("[a-zA-Z]+"))
+		{
 			char[] ch=str.toCharArray();
 			long startTime=System.nanoTime();
 			long stopTime;
@@ -543,13 +643,13 @@ public class Utility
 			}
 			stopTime=System.nanoTime();
 			String str1=new String(ch);
-			System.out.println("sorted string is: "+str1);
+			System.out.println("Sorted string is: "+str1);
 			System.out.println("Time taken for bubble sort  of string "+(stopTime-startTime));
-		  }
-		 else
-		 {
-			 System.out.println();
-		 }
+		}
+		else
+		{
+			 System.out.println("Enter valid data");
+		}
 	}
 	//*******************************************INSERTION SORT FOR STRINGS***********************************************//
 	/**
@@ -573,11 +673,11 @@ public class Utility
 				 }
 			 }
 		}
-		 System.out.println("Sorted Strings are: ");
-		 for(String sortedArray:array)
-		 {
+		System.out.println("Sorted Strings are: ");
+		for(String sortedArray:array)
+		{
 			 System.out.println(sortedArray);
-		 }
+		}
 	}
 	
 	//*************************************TEMPERATURE CONVERTION**********************************************************//
@@ -829,7 +929,71 @@ public class Utility
 
 	}
 	//**************************************************************************************************************************
+	/**
+	 * @purpose :To read only string word type of input from user and returns
+	 *           string value
+	 * @return : string
+	 **/
 
+	public static String scanWord()
+	{
+		String s = sc.next(); //calling next method to scan word and store it in a variable
+		return s;
+	}
+	
+	/**
+	 * @param String : This method takes string as command line aruguments
+	 * @purpose      : This method is used to read data from file store them in a string  array
+	 * @return       : string array
+	 **/
+		public static String[] fileReadString(String path) throws Exception
+		{
+			String line;
+			FileReader file = new FileReader(path); // reading data from file
+			BufferedReader read = new BufferedReader(file); // reading data from fr object
+
+			/* reading data from br object and adding it to linkedlist */
+			while ((line = read.readLine())!= null) 
+			{
+				String word[] = line.split(" ");// adding word in file to word array
+				return word;
+			}
+			read.close();
+			return null;
+		}
+		
+
+/**
+ * @param String : This method takes string as command line aruguments
+ * @purpose      : This method is used to read data from file store them in a integer array
+ * @return       : int array
+ **/
+	
+	public static int[] fileReadInt(String path) throws Exception
+	{
+		String line;
+		FileReader file = new FileReader(path); // reading data from file
+		BufferedReader br = new BufferedReader(file); // reading data from fr object
+
+		/* reading data from br object and adding it to linkedlist */
+		while ((line = br.readLine()) != null) 
+		{
+			String word[] = line.split(" ");
+			int size = word.length;
+			int arr[] = new int[size];
+			/* for loop to convert string to integer data*/
+			for (int i = 0; i < arr.length; i++)
+			{
+				arr[i] = Integer.parseInt(word[i]);
+
+			}
+
+			br.close();
+		}
+		return null;
+	}
+		
+		
 
 		 
 		 
