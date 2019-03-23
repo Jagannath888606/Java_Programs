@@ -139,8 +139,6 @@ public class Utility
 	 * @return :void
 	 **/
 	
-	
-	
 	public static void TwoDArray()
 	{
 		System.out.println("Enter 1 for integer array");
@@ -247,100 +245,111 @@ public class Utility
 	}
 	//**************************************************************ANAGRAM OF STRINGS*************************************//
 	/**
-	 * @purpose :This method is used to find weather the given strings are anagram
-	 *           are not
+	 * @purpose : This method is used to find weather the given strings are anagram
+	 *          are not
 	 * @return : boolean
-	 **/	
-	public static boolean anagram(String str1,String str2)
-	{
-		// To make sure that there is no word case problems while performing action
-				str1 = str1.toUpperCase();
-				str2 = str2.toUpperCase();
-
-				// Converting strings in to character array
-				char ch[] = str1.toCharArray();
-				char ch1[] = str2.toCharArray();
-
-				// sorting the character array
-				Arrays.sort(ch);
-				Arrays.sort(ch1);
-
-				// Converting strings in to character array
-				String s3 = new String(ch);
-				String s4 =new String(ch1);
-
-				// condition checking for anagram
-				if (s3.length() == s4.length())
-				{
-					if (s3.equals(s4)) 
-					{
-						return true;
-					}
-				}
-				return false;
-	}
-	//**************************************************************PRIME NUMBERS******************************************//
-	/**
-	 * @purpose :This method is used to find prime numbers between 1-1000 and
-	 *           returns as a string arraylist
-	 * @return : ArrayList<String>
 	 **/
-	public static ArrayList<String> primeNumbers(int range )
-	{
-		int i=0;
-		ArrayList<String> list=new ArrayList<String>();// creating a string type array list to store prime numbers
-		System.out.println("Enter range of value: ");
-		range=Utility.inputInt();
-		for(i=2;i<=range;i++)//loop for repeate the range times
+	public static boolean anagram(String s1, String s2)
+	{ // To make sure that there is no word case problems while performing action
+		s1 = s1.toUpperCase();
+		s2 = s2.toUpperCase();
+
+		// Converting strings in to character array
+		char ch[] = s1.toCharArray();
+		char ch1[] = s2.toCharArray();
+
+		// sorting the character array
+		Arrays.sort(ch);
+		Arrays.sort(ch1);
+
+		// Converting strings in to character array
+		String s3 = String.valueOf(ch);
+		String s4 = String.valueOf(ch1);
+
+		// condition checking for anagram
+		if (s3.length() == s4.length()) 
 		{
-			int count=0;
-			for(int j=2;j<i;j++)
+			if (s3.equals(s4)) 
 			{
-				if(i%j==0)
-				{
-					count++;
-				}
-			}
-			if(count==0)
-			{
-				list.add(i+" ");
+				return true;
 			}
 		}
-		return list ;
+		return false;
+
 	}
-	//***************************************************PRIME NUMBERS WITH ANAGRAM****************************************//
+//********************************************************************PRIME NUMBERS***************************************//
 	/**
-	 * @purpose:This method is used to find the prime numbers which are anagram
-	 * @return :ArrayList<String>
+	 * @purpose : This method is used to find prime numbers between 1-1000 and
+	 *          returns as a string arraylist
+	 * @return : ArrayList<String>
 	 **/
-	public static ArrayList<String> anagramPrime()
+
+	public static ArrayList<String> primeNumbers(int range)
+	{
+		int i = 0;
+		// creating a string type array list to store prime numbers
+		ArrayList<String> al = new ArrayList<String>();
+		// loop to repeate range times
+		for (i = 2; i <= range; i++) 
+		{
+			int count = 0;
+			for (int j = 2; j <= i - 1; j++)
+			{
+				if (i % j == 0) 
+				{
+					count++;
+					break;
+				}
+			}
+			if (count == 0)
+			{
+
+				al.add(i + "");// adding prime numbers to arraylist
+			}
+		}
+		return al;
+
+	}
+
+	/**
+	 * @return 
+	 * @purpose : This method is used to find the prime numbers which are anagram
+	 * @return : void
+	 **/
+
+	public static ArrayList<String> primeAnagram() 
 	{
 		// creating arraylist to add all prime numbers
-				ArrayList<String> al = new ArrayList<String>();
-				ArrayList<String> al1 =new  ArrayList<String>();
-				// calling prime method
-				al.addAll(primeNumbers(1000));
+		ArrayList<String> al = new ArrayList<String>();
+		ArrayList<String> al1 =new  ArrayList<String>();
+		// calling prime method
+		al.addAll(primeNumbers(1000));
+		int size = al.size();
+		String[] arr = new String[size];
 
-				int size = al.size();
-				String[] arr = new String[size];
+		// converting arraylist to string array
+		arr = al.toArray(arr);
 
-				// converting arraylist to string array
-				arr = al.toArray(arr);
+		// loop to find prime anagram
+		for (int k = 0; k < arr.length; k++) 
+		{
+			for (int i = 0; i < arr.length; i++)
+			{
 
-				// loop to find prime anagram
-				for (int k = 0; k < arr.length; k++) 
+				if (anagram(arr[k], arr[i]) == true) 
 				{
-					for (int i = 0; i < arr.length; i++) 
-					{
-						if (anagram(arr[k], arr[i])==true)
-						{
-							al1.add(arr[k]);
-						}
-					}
-
+					al1.add(arr[k]);
 				}
+			}
+
+		}
 		return al1;
 	}
+
+	/**
+	 * @purpose : This method is used to find the prime numbers which are palindrome
+	 * @return : ArrayList<Integer>
+	 **/
 	//*********************************************PRIME NUMBERS WITH PALINDROME***********************************************************************//
 	/**
 	 * @purpose:This method is used to find the prime numbers which are palindrome or not
@@ -971,6 +980,7 @@ public class Utility
  * @return       : int array
  **/
 	
+	@SuppressWarnings("resource")
 	public static int[] fileReadInt(String path) throws Exception
 	{
 		String line;
@@ -989,6 +999,7 @@ public class Utility
 				arr[i] = Integer.parseInt(word[i]);
 			}
 			br.close();
+			return arr;
 		}
 		return null;
 	}
@@ -1004,95 +1015,161 @@ public class Utility
 			final int day=1;
 			/*standard formulas to find the day falls on the date */
 			int y = year - (14 - month) / 12;
-			int x = y + y / 4 - y / 100 + y / 400;
+			int x = y + y/ 4 - y / 100 + y / 400;
 			int m = month + 12 * ((14 - month) / 12) - 2;
 			int d = (day + x + 31 * m / 12) % 7;
 			return d;// returning d value
 		}
+	//***************************************************************************************************************************************************************//
+		/**
+		 * @param long   : It takes long type data as command line aruguments
+		 * @purpose      : This method is used to find factorial of a number
+		 * @return       : long 
+		 **/
+		public static long factorial(long Num)
+		{
+			long fact=1;
+			/*loop to get factorial of a number*/
+			while (Num>0)
+			{
+				fact=fact*Num;// multiplying the number with fact 
+				Num--;// decrementing the number
+			}
+			return fact;// returning fact value
+		}
+//******************************************************************************************************************************************************************//
+		/**
+		 * @param int    : This method takes two integer as command line aruguments
+		 * @purpose      : This method is used to find day of week
+		 * @return       : integer
+		 **/	
+			public static int getDate(int month,int year)
+			{
+				final int day=1;
+				/*standard formulas to find the day falls on the date */
+				int y = year - (14 - month) / 12;
+				int x = y + y / 4 - y / 100 + y / 400;
+				int m = month + 12 * ((14 - month) / 12) - 2;
+				int dis = (day + x + 31 * m / 12) % 7;
+				return dis;// returning d value
+			}
+//********************************************************************************************************************//
+			/**
+			 * @purpose      : This method is used to  convert arraylist to integer array
+			 * @return       : integer array
+			 **/
+				public static int[] convertToIntegerArray ()
+				{
+					// creating arraylist object to store prime  numbers
+					ArrayList <String> al = new ArrayList<String>();
+					al = primeAnagram();// calling prime method to get all prime numbers between 1-1000
+					int size = al.size();
+					String arr[] = new String [size];
+					int prime [] = new int [size];
+					/*loop to store elements in a string array*/
+					for (int i=0;i<arr.length;i++)
+					{
+						arr[i] = al.get(i);
+					}
+					/*loop to convert string array to integer array */
+					for (int i=0;i<arr.length;i++)
+					{
+						prime [i] = Integer.parseInt(arr[i]);// calling method to convert string to integer
+					}
+					return prime; // returning prime array
+					
+				}		
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	

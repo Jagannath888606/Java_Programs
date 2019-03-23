@@ -1,5 +1,5 @@
 /******************************************************************************************
- * 	@purpose      :  To read a list of numbers  from  file and search for a string,if the is found,delete it,if word is not found add the number to file
+ * 	@purpose      : To read a list of numbers  from  file and search for a string,if the is found,delete it,if word is not found add the number to file
  *  
  *  @author       : B.Jagannath
  *  @version      : 1.0

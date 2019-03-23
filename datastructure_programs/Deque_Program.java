@@ -3,7 +3,7 @@
  *  
  *  @author       : B.Jaganath
  *  @version      : 1.0
- *  @since        : 12-01-2019
+ *  @since        : 20-03-2019
  **************************************************************************************************/
 
 package com.bridgeit.datastructure_programs;
@@ -13,14 +13,13 @@ public class Deque_Program
 	int size;
 	int front;
 	int rear;
-	char ch[];
+	char[] ch;
     int chSize;
 /**
  * @param int  : It takes integer value  as command line arguments 
  * @purpose    : constractor to intilize the size of array 
  */
-	Deque_Program(int chSize)
-	
+	public Deque_Program(int chSize)
 	{
 		this.chSize=chSize; // globalizeing chsize variable
 		ch = new char[chSize];

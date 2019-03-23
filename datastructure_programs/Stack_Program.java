@@ -1,5 +1,5 @@
 /******************************************************************************************
- * 	@purpose      :  To hold all the method of stack  
+ * 	@purpose      : To hold all the method of stack  
  *  
  *  @author       : B.Jagannath
  *  @version      : 1.0

@@ -16,7 +16,7 @@ public class PrimeWithAnagram
 	{
 		try
 		{
-			System.out.println("The anagram numbers in between 1-1000 prime numbers are:"+Utility.anagramPrime());
+			System.out.println("The anagram numbers in between 1-1000 prime numbers are:"+Utility.primeAnagram());
 		} 
 		catch (Exception e)
 		{

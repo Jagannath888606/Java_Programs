@@ -1,5 +1,5 @@
 /******************************************************************************************
- * 	@purpose      :  To hold all the method of queue class 
+ * 	@purpose      : To hold all the method of queue class 
  *  
  *  @author       : B.Jagannath
  *  @version      : 1.0
