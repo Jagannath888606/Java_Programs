@@ -1,0 +1,56 @@
+
+{
+    "Rice": [
+        {
+        "name":"Basmathi",
+        "weight":"25",
+        "price":"90"
+        },
+        {
+            "name":"SteamRice",
+            "weight":"30",
+            "price":"52"
+        },
+        {
+            "name":"Bulletrice",
+            "weight":"40",
+            "price":"66"
+            
+        }
+
+    ],
+    "Wheat":[
+        {
+            "name":"Ashirvad",
+            "weight":"10",
+            "price":"32"
+        },
+        {
+            "name":"Patanjali",
+            "weight":"12",
+            "price":"30"
+        },
+        {
+            "name":"Samrat India",
+            "weight":"18",
+            "price":"40"
+        }
+    ],
+    "Pulses":[
+        {
+            "name":"Moong",
+            "weight":"18",
+            "price":"30"
+        },
+        {
+            "name":"Chana",
+            "weight":"16",
+            "price":"90"
+        },
+        {
+            "name":"Rajma",
+            "weight":"14",
+            "price":"20"
+        }
+    ]
+}
