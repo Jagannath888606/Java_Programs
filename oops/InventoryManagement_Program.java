@@ -6,7 +6,7 @@
 *  @since        : 26-03-2019
 ****************************************************************************************************************/
 
-package com.bridgeit.oops;
+package com.bridgeit.oopss;
 
 import java.io.*;
 import java.util.Scanner;

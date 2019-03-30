@@ -1,4 +1,4 @@
-package com.bridgeit.oops;
+package com.bridgeit.oopss;
 
 import java.io.File;
 import java.io.IOException;

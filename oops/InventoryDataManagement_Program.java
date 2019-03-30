@@ -6,7 +6,7 @@
 *  @since        : 25-03-2019
 ****************************************************************************************************************/
 
-package com.bridgeit.oops;
+package com.bridgeit.oopss;
 
 import java.io.File;
 import java.io.IOException;
