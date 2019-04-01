@@ -1,0 +1,19 @@
+[ {
+  "companyName" : "reliance",
+  "stokeSymbol" : "REL",
+  "noOfShares" : 589,
+  "price" : 5000,
+  "dateTime" : null
+}, {
+  "companyName" : "hdfc",
+  "stokeSymbol" : "HDF",
+  "noOfShares" : 984,
+  "price" : 5050,
+  "dateTime" : null
+}, {
+  "companyName" : "icici",
+  "stokeSymbol" : "ICI",
+  "noOfShares" : 321,
+  "price" : 6500,
+  "dateTime" : null
+} ]
