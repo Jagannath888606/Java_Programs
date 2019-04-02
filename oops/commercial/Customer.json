@@ -1,0 +1,31 @@
+[ {
+  "name" : "jagannath",
+  "relianceShares" : 65,
+  "hdfcShares" : 45,
+  "iciciShares" : 32
+}, {
+  "name" : "jagan",
+  "relianceShares" : 85,
+  "hdfcShares" : 35,
+  "iciciShares" : 72
+}, {
+  "name" : "jagannathchowdary",
+  "relianceShares" : 61,
+  "hdfcShares" : 47,
+  "iciciShares" : 39
+}, {
+  "name" : "jaggu",
+  "relianceShares" : 45,
+  "hdfcShares" : 15,
+  "iciciShares" : 92
+}, {
+  "name" : "CHOWDARY",
+  "relianceShares" : 65,
+  "hdfcShares" : 0,
+  "iciciShares" : 0
+}, {
+  "name" : "RAVANA",
+  "relianceShares" : 9,
+  "hdfcShares" : 0,
+  "iciciShares" : 0
+} ]
